@@ -1,4 +1,6 @@
 # Lazy Android Equalizer View
+
+<a target="_blank" rel="noopener noreferrer" href="/a15dotCom/Lazy-Android-Equalizer-View/blob/master/screenshot.png"><img src="/a15dotCom/Lazy-Android-Equalizer-View/blob/master/screenshot.png" alt="Example of and app using the equalizer" style="max-width:100%;"></a>
 Fast Equalizer Library for Android 
 ==================================
 This Equalizer Class extends SurfaceView implements SurfaceHolder.Callback
