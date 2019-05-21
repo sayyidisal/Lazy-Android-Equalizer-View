@@ -18,20 +18,18 @@ import java.util.TimerTask;
 
 public class LazyEqualizer extends SurfaceView implements SurfaceHolder.Callback {
 
-
-        public static final int DEFAULT_SPEED = 600;
-        public static final int DEFAULT_BAR_MAX_HEIGHT = 130;
+        public static final int DEFAULT_BAR_NUM_COUNT = 100;
         public static final int DEFAULT_BAR_WIDTH = 10;
         public static final int DEFAULT_BAR_SPACING = 12;
-        public static final int DEFAULT_BAR_NUM_COUNT = 100;
+        public static final int DEFAULT_BAR_MAX_HEIGHT = 130;
         public static final int DEFAULT_COLOR = Color.MAGENTA;
         public static final int DEFAULT_DEFAULT_BG = Color.WHITE;
+        public static final int DEFAULT_SPEED = 600;
 
         private SurfaceHolder surfaceHolder = null;
         private Paint paint = null;
         private Timer timer = null;
         private TimerTask task = null;
-        private Canvas canvas = null;
 
         int speed = DEFAULT_SPEED;
         float width = DEFAULT_BAR_WIDTH;
@@ -47,18 +45,14 @@ public class LazyEqualizer extends SurfaceView implements SurfaceHolder.Callback
         public LazyEqualizer(Context context, AttributeSet attrs) {
         super(context, attrs);
         x = barSpc;
+        setFocusable(true);
+        surfaceHolder = this.getHolder();
+        surfaceHolder.addCallback(this);
+        surfaceHolder.setFormat(PixelFormat.TRANSPARENT);
+        setZOrderOnTop(true);
+        paint = new Paint();
+        paint.setColor(bColor);
         getAttrs(context, attrs);
-        initView();
-        }
-
-        private void initView() {
-            setFocusable(true);
-            surfaceHolder = this.getHolder();
-            surfaceHolder.addCallback(this);
-            surfaceHolder.setFormat(PixelFormat.TRANSPARENT);
-            setZOrderOnTop(true);
-            paint = new Paint();
-            paint.setColor(bColor);
         }
 
         private void getAttrs(Context context, AttributeSet attrs) {
@@ -82,7 +76,7 @@ public class LazyEqualizer extends SurfaceView implements SurfaceHolder.Callback
         public void draw() {
             Canvas canvas = this.getHolder().lockCanvas();
             canvas.drawColor(bgColor);
-            canvas.save();
+
             final Random rand = new Random();
             ArrayList<Canvas> mCanvas = new ArrayList<>();
             for (int i = 0; i < mBarCount; i++) {
@@ -91,6 +85,7 @@ public class LazyEqualizer extends SurfaceView implements SurfaceHolder.Callback
                 canvas.drawRect(0, 0, width, height, paint);
             }
             mCanvas.add(canvas);
+            canvas.save();
             this.getHolder().unlockCanvasAndPost(canvas);
         }
 
