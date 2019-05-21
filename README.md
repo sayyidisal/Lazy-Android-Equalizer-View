@@ -35,18 +35,19 @@ dependencies {
 ## Layout
 
 ````xml
-        <com.ais.lazylibequalizer.LazyEqualizer
-            android:id="@+id/lazy_eq"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            app:barColor="@color/colorAccent"
-            app:barCount="100"
-            app:barSpacing="12"
-            app:barSpeed="200"
-            app:barWidth="10"
-            app:bgColor="@color/colorPrimary"
-            app:max_barHeight="130" />
+<com.ais.lazylibequalizer.LazyEqualizer
+     android:id="@+id/lazy_eq"
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:layout_gravity="center_horizontal"
+     app:barWidth="10"
+     app:barSpacing="12"
+     app:barCount="100"
+     app:max_barHeight="130"
+     app:barColor="@color/colorAccent"
+     app:bgColor="@color/colorPrimary"
+     app:barSpeed="200">
+</com.ais.lazylibequalizer.LazyEqualizer>
 ````
 
 ### Attributes
@@ -65,7 +66,7 @@ There is some custom attributes you can adjust from the xml:
 To start animating the equalizer you should add:
 
 ````java
-LazyEqualizer equalizer = findViewById(R.id.lazy_eq);
+LazyEqualizer equalizer = (LazyEqualizer ) findViewById(R.id.lazy_eq);
 equalizer.startView(); // Whenever you want to tart the animation
 equalizer.stopView(); // When you want equalizer stops animating
 ````

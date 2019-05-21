@@ -19,13 +19,13 @@ import java.util.TimerTask;
 public class LazyEqualizer extends SurfaceView implements SurfaceHolder.Callback {
 
 
-        public static final int DEFAULT_SPEED = 600;
-        public static final int DEFAULT_BAR_MAX_HEIGHT = 130;
         public static final int DEFAULT_BAR_WIDTH = 10;
         public static final int DEFAULT_BAR_SPACING = 12;
         public static final int DEFAULT_BAR_NUM_COUNT = 100;
+        public static final int DEFAULT_BAR_MAX_HEIGHT = 130;
         public static final int DEFAULT_COLOR = Color.MAGENTA;
         public static final int DEFAULT_DEFAULT_BG = Color.WHITE;
+        public static final int DEFAULT_SPEED = 600;
 
         private SurfaceHolder surfaceHolder = null;
         private Paint paint = null;
@@ -44,7 +44,7 @@ public class LazyEqualizer extends SurfaceView implements SurfaceHolder.Callback
         float x = barSpc, y = 0;
 
 
-    public LazyEqualizer(Context context) {
+        public LazyEqualizer(Context context) {
             super(context);
             x = barSpc;
             initView();
@@ -77,9 +77,9 @@ public class LazyEqualizer extends SurfaceView implements SurfaceHolder.Callback
             TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.srfconfig, 0, 0);
 
             try {
-                mBarCount = a.getInt(R.styleable.srfconfig_barCount, DEFAULT_BAR_NUM_COUNT);
                 width = a.getFloat(R.styleable.srfconfig_barWidth, DEFAULT_BAR_WIDTH);
                 barSpc = a.getInt(R.styleable.srfconfig_barSpacing, DEFAULT_BAR_SPACING);
+                mBarCount = a.getInt(R.styleable.srfconfig_barCount, DEFAULT_BAR_NUM_COUNT);
                 barHeightmax = a.getInt(R.styleable.srfconfig_max_barHeight, DEFAULT_BAR_MAX_HEIGHT);
                 bColor = a.getInt(R.styleable.srfconfig_barColor, DEFAULT_COLOR);
                 bgColor = a.getInt(R.styleable.srfconfig_bgColor, DEFAULT_DEFAULT_BG);
