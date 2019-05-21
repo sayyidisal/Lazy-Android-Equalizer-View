@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-import com.ais.lazylibequalizer.R;
 
 
 public class LazyEqualizer extends SurfaceView implements SurfaceHolder.Callback {
@@ -45,20 +44,9 @@ public class LazyEqualizer extends SurfaceView implements SurfaceHolder.Callback
         float x = barSpc, y = 0;
 
 
-    public LazyEqualizer(Context context) {
-            super(context);
-            x = barSpc;
-            initView();
-        }
-
         public LazyEqualizer(Context context, AttributeSet attrs) {
         super(context, attrs);
-        getAttrs(context, attrs);
-        initView();
-        }
-
-        public LazyEqualizer(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
+        x = barSpc;
         getAttrs(context, attrs);
         initView();
         }
