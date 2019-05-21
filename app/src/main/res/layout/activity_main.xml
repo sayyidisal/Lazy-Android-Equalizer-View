@@ -27,11 +27,12 @@
             android:layout_gravity="center_horizontal"
             app:barColor="@color/colorAccent"
             app:barCount="100"
-            app:barSpacing="12"
-            app:barSpeed="200"
-            app:barWidth="10"
+            app:barSpacing="22"
+            app:barSpeed="600"
+            app:barWidth="20"
             app:bgColor="@color/colorPrimary"
-            app:max_barHeight="130" />
+            app:max_barHeight="130" >
+        </com.ais.lazylibequalizer.LazyEqualizer>
 
         <Button
             android:id="@+id/button"

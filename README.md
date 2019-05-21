@@ -35,19 +35,19 @@ dependencies {
 ## Layout
 
 ````xml
-    <com.ais.lazylibequalizer.LazyEqualizer
-        android:id="@+id/lazy_eq"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        app:barWidth="10"
-        app:barSpacing="12"
-        app:barCount="100"
-        app:max_barHeight="130"
-        app:barColor="@color/colorAccent"
-        app:bgColor="@color/colorPrimary"
-        app:barSpeed="200">
-     </com.ais.lazylibequalizer.LazyEqualizer>
+        <com.ais.lazylibequalizer.LazyEqualizer
+            android:id="@+id/lazy_eq"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            app:barColor="@color/colorAccent"
+            app:barCount="100"
+            app:barSpacing="22"
+            app:barSpeed="600"
+            app:barWidth="20"
+            app:bgColor="@color/colorPrimary"
+            app:max_barHeight="130" >
+        </com.ais.lazylibequalizer.LazyEqualizer>
 ````
 
 ### Attributes

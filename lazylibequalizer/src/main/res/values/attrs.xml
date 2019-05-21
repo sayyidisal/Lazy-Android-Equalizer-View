@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <declare-styleable name="srfconfig">
-
-        <attr name="barWidth" format="integer" />
-
-        <attr name="barSpacing" format="integer" />
-
-        <attr name="barCount" format="integer" />
-
-        <attr name="max_barHeight" format="integer" />
-
         <attr name="barColor" format="color" />
-
-        <attr name="bgColor" format="color" />
-
+        <attr name="barCount" format="integer" />
+        <attr name="barSpacing" format="integer" />
         <attr name="barSpeed" format="integer" />
-
-    </declare-styleable>
-
+        <attr name="barWidth" format="integer" />
+        <attr name="bgColor" format="color" />
+        <attr name="max_barHeight" format="integer" />
+        </declare-styleable>
 </resources>

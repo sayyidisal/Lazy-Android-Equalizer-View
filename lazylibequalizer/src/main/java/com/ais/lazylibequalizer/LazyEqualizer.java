@@ -18,27 +18,28 @@ import java.util.TimerTask;
 
 public class LazyEqualizer extends SurfaceView implements SurfaceHolder.Callback {
 
-        public static final int DEFAULT_BAR_NUM_COUNT = 100;
-        public static final int DEFAULT_BAR_WIDTH = 10;
-        public static final int DEFAULT_BAR_SPACING = 12;
-        public static final int DEFAULT_BAR_MAX_HEIGHT = 130;
         public static final int DEFAULT_COLOR = Color.MAGENTA;
-        public static final int DEFAULT_DEFAULT_BG = Color.WHITE;
+        public static final int DEFAULT_BAR_NUM_COUNT = 100;
+        public static final int DEFAULT_BAR_SPACING = 12;
         public static final int DEFAULT_SPEED = 600;
+        public static final int DEFAULT_BAR_WIDTH = 10;
+        public static final int DEFAULT_DEFAULT_BG = Color.WHITE;
+        public static final int DEFAULT_BAR_MAX_HEIGHT = 130;
+
 
         private SurfaceHolder surfaceHolder = null;
         private Paint paint = null;
         private Timer timer = null;
         private TimerTask task = null;
 
+        int bColor = DEFAULT_COLOR;
+        int mBarCount = DEFAULT_BAR_NUM_COUNT;
+        int barSpc = DEFAULT_BAR_SPACING;
         int speed = DEFAULT_SPEED;
         float width = DEFAULT_BAR_WIDTH;
         int height = 0;
-        int mBarCount = DEFAULT_BAR_NUM_COUNT;
-        int barSpc = DEFAULT_BAR_SPACING;
-        int barHeightmax = DEFAULT_BAR_MAX_HEIGHT;
-        int bColor = DEFAULT_COLOR;
         int bgColor = DEFAULT_DEFAULT_BG;
+        int barHeightmax = DEFAULT_BAR_MAX_HEIGHT;
         float x = barSpc, y = 0;
 
 
@@ -60,14 +61,13 @@ public class LazyEqualizer extends SurfaceView implements SurfaceHolder.Callback
             TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.srfconfig, 0, 0);
 
             try {
-                mBarCount = a.getInt(R.styleable.srfconfig_barCount, DEFAULT_BAR_NUM_COUNT);
-                width = a.getFloat(R.styleable.srfconfig_barWidth, DEFAULT_BAR_WIDTH);
-                barSpc = a.getInt(R.styleable.srfconfig_barSpacing, DEFAULT_BAR_SPACING);
-                barHeightmax = a.getInt(R.styleable.srfconfig_max_barHeight, DEFAULT_BAR_MAX_HEIGHT);
                 bColor = a.getInt(R.styleable.srfconfig_barColor, DEFAULT_COLOR);
-                bgColor = a.getInt(R.styleable.srfconfig_bgColor, DEFAULT_DEFAULT_BG);
+                mBarCount = a.getInt(R.styleable.srfconfig_barCount, DEFAULT_BAR_NUM_COUNT);
+                barSpc = a.getInt(R.styleable.srfconfig_barSpacing, DEFAULT_BAR_SPACING);
                 speed = a.getInt(R.styleable.srfconfig_barSpeed, DEFAULT_SPEED);
-
+                width = a.getFloat(R.styleable.srfconfig_barWidth, DEFAULT_BAR_WIDTH);
+                bgColor = a.getInt(R.styleable.srfconfig_bgColor, DEFAULT_DEFAULT_BG);
+                barHeightmax = a.getInt(R.styleable.srfconfig_max_barHeight, DEFAULT_BAR_MAX_HEIGHT);
             } finally {
                 a.recycle();
             }
