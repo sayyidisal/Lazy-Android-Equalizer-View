@@ -1,6 +1,6 @@
 # Lazy Android Equalizer View
 
-![Alt screenshoot](/a15dotCom/Lazy-Android-Equalizer-View/blob/master/screenshot.png?raw=true "Lazy Android Equalizer View")
+![screenshoot](https://github.com/a15dotCom/Lazy-Android-Equalizer-View/blob/master/screenshot.png "Lazy Android Equalizer View")
 
 Fast Equalizer Library for Android 
 ==================================
