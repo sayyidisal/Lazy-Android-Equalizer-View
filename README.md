@@ -28,7 +28,7 @@ allprojects {
 Step 2. Add the dependency
 ```groovy
 dependencies {
-
+		implementation 'com.github.a15dotCom:Lazy-Android-Equalizer-View:v1.0-SNAPSHOT'
  }
  ```
 
